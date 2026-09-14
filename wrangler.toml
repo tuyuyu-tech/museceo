@@ -2,7 +2,9 @@
 # 人間がWorkerダッシュボードの Version control（Git連携）で本リポジトリを接続すると、
 # 以後 main への push だけで自動デプロイされる。CEO agentは再デプロイ操作を人間に要求しない。
 
-name = "ai-jitan-prompt"
+# 注意：name は公開中Workerのサブドメインと一致させること。
+# 不一致だと別Workerにデプロイされ、公開URLに反映されない（2026-09-14に実証済みの失敗）。
+name = "young-shape-ad1c"
 compatibility_date = "2026-09-14"
 
 [assets]
