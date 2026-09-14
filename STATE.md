@@ -35,7 +35,7 @@ AI中心で、本人が24時間触らなくても売上発生まで進む事業�
 ## Metrics
 - cost_yen: 0
 - revenue_yen: 0
-- artifacts: site/index.html(v0.2), site/robots.txt, site/sitemap.xml, product/prompt-pack-01.md, articles/ai-jitan-prompt-mail-gijiroku.md, wrangler.toml, docs/oneshot-setup.md (公開中： https://young-shape-ad1c.nyangorinyangori.workers.dev/ )
+- artifacts: site/index.html(購入ボタン誘導中), site/robots.txt, site/sitemap.xml, product/prompt-pack-01.md, articles/×2（汎用＋議事録特化）, wrangler.toml(name修正済み・自動デプロイ実証), docs/oneshot-setup.md (公開中： https://young-shape-ad1c.nyangorinyangori.workers.dev/ )
 - validation: Zenn slug規約（12〜50字・a-z0-9-_・ファイル名=slug・frontmatter）をwebsearchで確認し適合
 
 ## Next
@@ -45,3 +45,4 @@ AI中心で、本人が24時間触らなくても売上発生まで進む事業�
 - 2026-09-14 24時台：開通確認済み。実URLにv0.2反映（FAQ＋新文言）。push→自動デプロイの動作を実証。以後のサイト更新はCEOのpushのみで自動反映。
 - 2026-09-14深夜：商品URL受領→購入ボタン埋め込み完了（note「AI時短プロンプト30」¥300〜/700）。収益導線が開通（売上はまだ0）。
 - 翌run診断：購入ボタン(cf64cbb)が実URLに未反映。過去の反映は人間の手動再アップロードだった可能性が高く、自動デプロイは一度も実証されていなかった。原因の最有力は `wrangler.toml` の `name = "ai-jitan-prompt"` が公開Worker名と不一致で別Workerに流れていたこと。`name = "young-shape-ad1c"` に修正しpush(fffaf1b)。次runで購入ボタンの反映を自動確認する。
+- 本run：購入ボタンの反映を確認（pack「販売中」＋note購入ボタン＋FAQ更新が実URL表示）。自動デプロイを今回こそ実証。次の一手として流入第2弾 `articles/gijiroku-ai-prompt-minutes-todo.md`（議事録特化・実用3本全文＋商品リンク付き・published:true）を出荷。流入面を2系統化。
