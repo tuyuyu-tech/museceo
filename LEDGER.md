@@ -10,4 +10,5 @@
 | 2026-09-14 | ceo | 0.1h | 0 | git初動：ceo agent権限を同期、add→commit(5251824・15files・733ins)→branch main。秘密情報混入なし・tree clean。remote未設定のためpushは保留 | 人間：GitHub repo作成後にURL報告→CEOがpush・連携に進む |
 | 2026-09-14 | ceo | 0.1h | 0 | 初回push完了：origin=https://github.com/tuyuyu-tech/museceo.git、mainをpush・upstream設定。local==origin/main(58b1738)・diffなし検証済み | 人間：再起動→Worker/Zenn連携→アフィリURL・商品URL報告 |
 | 2026-09-14 | ceo | 0.1h | 0 | Worker/Zenn連携済み(人間報告)。パイプライン検証push：台帳更新をcommit→pushし自動デプロイ・自動投稿の動作確認へ | 人間：アフィリURL・商品URL報告のみ |
+| 2026-09-14 | ceo | 0.2h | 0 | 検証push(2d3fbe3)後に実URL取得→旧v0.1表示のまま(FAQなし)。Git連携の初回反映待ちの可能性。再pushで発火確認へ | 自動確認中（人間作業なし） |
 | 2026-09-14 | ceo | 0.1h | 0 | note記事公開確認：https://note.com/unique_marten791/n/n0edfbe5f8af4 タイトルB・診断リンク正常 | 残り：アフィリURL・商品URL報告待ち→自動差し込み。7日後に閲覧数記録 |
