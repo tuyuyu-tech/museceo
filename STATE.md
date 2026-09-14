@@ -41,3 +41,4 @@ AI中心で、本人が24時間触らなくても売上発生まで進む事業�
 ## Next
 - 人間のワンショット残件：⑤アフィリURL・商品URLを1メッセージで報告（登録・審査は人間のみ可）。完了済み：②repo・push、③Worker連携、④Zenn連携。①opencode再起動は未確認（新権限の反映に必要）。以後はCEOが全自動運用し定常要求しない。
 - 補足：ローカルはcommit済み（5251824・main・tree clean）。`git add` 時の混入チェック済み（node_modules除外・秘密情報なし）。
+- 2026-09-14 23時台：Worker⇔museceo接続直後。実URLはまだv0.1（83df26a時点）。初回ビルド待ちの可能性が高く、次runで自動再取得して確認する（人間作業なし）。note記事は公開済み（https://note.com/unique_marten791/n/n0edfbe5f8af4）。
