@@ -39,4 +39,5 @@ AI中心で、本人が24時間触らなくても売上発生まで進む事業�
 - validation: Zenn slug規約（12〜50字・a-z0-9-_・ファイル名=slug・frontmatter）をwebsearchで確認し適合
 
 ## Next
-- 人間のワンショットのみ（詳細はdocs/oneshot-setup.md）：①opencode再起動 ②GitHub repo作成＋初回push ③WorkerにGit連携 ④ZennにGitHub連携 ⑤アフィリURL・商品URLを1メッセージで報告。以後はCEOが全自動運用し定常要求しない。
+- 人間のワンショットのみ（詳細はdocs/oneshot-setup.md）：①opencode再起動 ②GitHub repo作成→リポジトリURLを報告（初回pushはCEOが実行）③WorkerにGit連携 ④ZennにGitHub連携 ⑤アフィリURL・商品URLを1メッセージで報告。以後はCEOが全自動運用し定常要求しない。
+- 補足：ローカルはcommit済み（5251824・main・tree clean）。`git add` 時の混入チェック済み（node_modules除外・秘密情報なし）。
