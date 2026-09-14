@@ -1,0 +1,5 @@
+# 0円事業 repo 用
+logs/
+node_modules/
+.DS_Store
+Thumbs.db

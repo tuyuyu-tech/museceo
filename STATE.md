@@ -36,7 +36,7 @@ AI中心で、本人が24時間触らなくても売上発生まで進む事業�
 ## Metrics
 - cost_yen: 0
 - revenue_yen: 0
-- artifacts: site/index.html(購入ボタン×2＋中間CTA＋診断upsell・実URL反映済み), site/robots.txt, site/sitemap.xml, product/prompt-pack-01.md, articles/×2（汎用＋議事録特化）, wrangler.toml(name修正済み・自動デプロイ実証), docs/oneshot-setup.md (公開中： https://young-shape-ad1c.nyangorinyangori.workers.dev/ )
+- artifacts: site/index.html(購入ボタン×2＋中間CTA＋診断upsell・実URL反映済み), site/robots.txt, site/sitemap.xml, product/prompt-pack-01.md, articles/×3（汎用＋議事録特化＋資料作成特化・Zenn自動投稿）, wrangler.toml(name修正済み・自動デプロイ実証), docs/oneshot-setup.md, .gitignore(logs除外), run-ceo.ps1(ログ保存化) (公開中： https://young-shape-ad1c.nyangorinyangori.workers.dev/ )
 - validation: Zenn slug規約（12〜50字・a-z0-9-_・ファイル名=slug・frontmatter）をwebsearchで確認し適合
 
 ## Next
@@ -48,3 +48,4 @@ AI中心で、本人が24時間触らなくても売上発生まで進む事業�
 - 翌run診断：購入ボタン(cf64cbb)が実URLに未反映。過去の反映は人間の手動再アップロードだった可能性が高く、自動デプロイは一度も実証されていなかった。原因の最有力は `wrangler.toml` の `name = "ai-jitan-prompt"` が公開Worker名と不一致で別Workerに流れていたこと。`name = "young-shape-ad1c"` に修正しpush(fffaf1b)。次runで購入ボタンの反映を自動確認する。
 - 本run：購入ボタンの反映を確認（pack「販売中」＋note購入ボタン＋FAQ更新が実URL表示）。自動デプロイを今回こそ実証。次の一手として流入第2弾 `articles/gijiroku-ai-prompt-minutes-todo.md`（議事録特化・実用3本全文＋商品リンク付き・published:true）を出荷。流入面を2系統化。
 - 本run(run7)：転換率fix完了・実URL反映済み。次は流入第3弾（資料作成・就活特化のどちらか1本、実用3本全文＋商品リンク）か、7日後のnote閲覧数記録のどちらか。流入が細い間は週1記事ペースで面を広げるのが最高値。
+- 2026-09-14 run8（流入第3弾・今回）：資料作成特化 `articles/shiryo-ai-prompt-slide-kossei.md` を出荷（slug 29字・規約適合・node検証OK）。骨子5枚＋反対意見先回り＋費用対効果の実用3本全文＋診断/商品リンク＋機密注意。ビジネス層（承認・決裁フロー）に刺さる構成で、就活生より購買力の高い事務・営業の流入を狙う。ついでに `run-ceo.ps1` のログ改善（人間による未commit分）と `logs/` 除外の `.gitignore` を同梱しtree clean維持。
