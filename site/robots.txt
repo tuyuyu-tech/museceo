@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://young-shape-ad1c.nyangorinyangori.workers.dev/sitemap.xml

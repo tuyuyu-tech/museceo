@@ -1,0 +1,9 @@
+# Cloudflare Workers 静的配信設定（0円・Static Assets）
+# 人間がWorkerダッシュボードの Version control（Git連携）で本リポジトリを接続すると、
+# 以後 main への push だけで自動デプロイされる。CEO agentは再デプロイ操作を人間に要求しない。
+
+name = "ai-jitan-prompt"
+compatibility_date = "2026-09-14"
+
+[assets]
+directory = "./site"

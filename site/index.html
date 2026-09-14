@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>無料ではじめる AI時短プロンプト診断｜メール・議事録・資料作成が3分で終わる</title>
+<meta name="description" content="無料のChatGPT・Claude・Geminiで使える、コピペ時短プロンプト集。3問診断で今の悩みに合うプロンプトを提案。メール・議事録・資料骨子・就活文を3分で下書き。">
+<meta property="og:title" content="AI時短プロンプト診断｜メール・議事録・資料作成が3分で下書き">
+<meta property="og:description" content="無料AIに貼るだけ。3問診断→コピペプロンプト6本無料。登録不要・データ収集なし。">
+<meta property="og:type" content="website">
+<!-- CANONICAL: https://young-shape-ad1c.nyangorinyangori.workers.dev/ -->
+<link rel="canonical" href="https://young-shape-ad1c.nyangorinyangori.workers.dev/">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0b6e4f">
+<style>
+:root{--fg:#1a1a1a;--bg:#fff;--acc:#0b6e4f;--mut:#666;--line:#e5e5e5;--card:#f7f7f5}
+*{box-sizing:border-box}body{margin:0;color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;line-height:1.8;background:var(--bg)}
+header,main,footer{max-width:760px;margin:0 auto;padding:0 20px}
+header{padding:32px 20px 8px}.badge{display:inline-block;background:#e8f5ee;color:var(--acc);font-size:13px;padding:4px 12px;border-radius:999px;font-weight:700}
+h1{font-size:clamp(24px,5vw,34px);line-height:1.4;margin:.6em 0 .4em}h2{font-size:21px;margin:2.2em 0 .6em;border-left:5px solid var(--acc);padding-left:10px}h3{font-size:17px;margin:1.4em 0 .4em}
+.lead{color:#333}.mut{color:var(--mut);font-size:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0}
+.btn{display:inline-block;background:var(--acc);color:#fff;text-decoration:none;padding:12px 22px;border-radius:10px;font-weight:700;margin:8px 8px 8px 0;border:0;cursor:pointer;font-size:16px}
+.btn.sub{background:#fff;color:var(--acc);border:2px solid var(--acc)}
+pre{white-space:pre-wrap;background:#111;color:#eee;padding:14px;border-radius:10px;font-size:14px;line-height:1.7;overflow:auto}
+.copy{float:right;background:#fff;border:1px solid var(--line);border-radius:8px;padding:4px 10px;cursor:pointer;font-size:13px}
+.q{margin:10px 0}select,button.sel{font-size:16px;padding:10px;border-radius:8px;border:1px solid var(--line);width:100%;margin-top:6px}
+#result{display:none}footer{border-top:1px solid var(--line);margin-top:40px;padding:20px;color:var(--mut);font-size:13px}
+ul.tight li{margin:.3em 0}a{color:var(--acc)}
+</style>
+</head>
+<body>
+<header>
+<span class="badge">初期費用0円・無料AIでOK・登録不要</span>
+<h1>メール・議事録・資料骨子が3分で下書きできる<br>AI時短プロンプト診断</h1>
+<p class="lead">ChatGPT（無料）・Claude（無料）・Gemini（無料）にそのまま貼るだけ。3問に答えると、今の悩みに合うプロンプトを提案します。個人情報の入力は不要・サーバー送信なし（このページ内で完結）。</p>
+<p><a class="btn" href="#shindan">3問診断ではじめる（30秒）</a><a class="btn sub" href="#prompts">無料サンプルを見る</a></p>
+<p class="mut"><a href="#faq">よくある質問へ進む</a>｜対象：事務・営業・人事・就活生・副業初心者で「文章に時間がかかる」人。無料枠で試して、足りなければ有料プランを検討する順番を推奨します。</p>
+</header>
+<main>
+<h2 id="shindan">1. 3問診断（ページ内で完結）</h2>
+<div class="card">
+<div class="q"><strong>Q1. 職種・立場は？</strong>
+<select id="q1"><option value="office">事務・バックオフィス</option><option value="sales">営業・接客</option><option value="job">就活・転職中</option><option value="side">副業・フリーランス入門</option></select></div>
+<div class="q"><strong>Q2. 一番時間がかかるのは？</strong>
+<select id="q2"><option value="mail">メール・チャット返信</option><option value="minutes">議事録・メモ整理</option><option value="doc">資料・企画の骨子</option><option value="polish">文章の直し・敬語チェック</option></select></div>
+<div class="q"><strong>Q3. 使っている無料AIは？</strong>
+<select id="q3"><option value="any">どれでも（おすすめ表示）</option><option value="chatgpt">ChatGPT</option><option value="claude">Claude</option><option value="gemini">Gemini</option></select></div>
+<button class="btn" onclick="diagnose()">診断結果を見る</button>
+<div id="result" class="card"></div>
+<p class="mut">※ 診断はJavaScriptのみ・外部送信なし。結果は目安です。機密情報・個人情報はAIに入力しないでください。</p>
+</div>
+
+<h2 id="prompts">2. 無料サンプル（コピペOK・6本）</h2>
+<p>まずはここから。全文は <a href="#pack">30本パック案内</a> にまとめています（30本フル版はGumroad / noteで出品準備中・このページの無料分はそのまま利用可）。</p>
+
+<div class="card"><button class="copy" onclick="copyP('p1')">コピー</button><h3>① 丁寧メール返信（断り＋代替案）</h3>
+<pre id="p1">あなたは丁寧なビジネス文の編集者です。以下のメモを、相手に失礼のないメール文に整えてください。
+条件：件名案1つ／本文200〜300字／敬語／断る場合は代替案を1つ添える／最後に確認事項を箇条書き。
+
+【メモ】：
+（ここに要件を箇条書きで貼る）
+
+【相手】：（例：取引先・上司・応募先）
+【自分の立場】：（例：事務担当）</pre></div>
+
+<div class="card"><button class="copy" onclick="copyP('p2')">コピー</button><h3>② 議事録→決定事項＋TODO化</h3>
+<pre id="p2">あなたは議事録の整理担当です。以下のメモを「決定事項／TODO（担当・期限）／未決事項」に分けて要約してください。
+条件：各5行以内／曖昧な表現は「要確認」と明記／固有名詞は変えない。
+
+【メモ】：
+（ここに箇条書きメモを貼る）</pre></div>
+
+<div class="card"><button class="copy" onclick="copyP('p3')">コピー</button><h3>③ 資料の骨子（3分たたき台）</h3>
+<pre id="p3">あなたは企画アシスタントです。以下のテーマで社内説明用スライドの骨子を作ってください。
+条件：タイトル案3つ／構成は「背景→課題→提案→費用対効果→次の一手」の5枚／各スライド3箇条書き／専門用語はかみ砕く。
+
+【テーマ】：（例：請求書処理のAI時短案）
+【読者】：（例：非ITの上司）
+【制限】：（例：初期費用0円・無料ツールのみ）</pre></div>
+
+<div class="card"><button class="copy" onclick="copyP('p4')">コピー</button><h3>④ 敬語・誤字チェック</h3>
+<pre id="p4">あなたは日本語校正者です。以下の文章を校正してください。
+条件：修正版のみ出力→その後に修正点3つを箇条書き／意味は変えない／二重敬語・誤字を重点チェック。
+
+【文章】：
+（ここに貼る）</pre></div>
+
+<div class="card"><button class="copy" onclick="copyP('p5')">コピー</button><h3>⑤ 志望動機の下書き（就活・転職）</h3>
+<pre id="p5">あなたはキャリア相談員です。以下の情報をもとに志望動機300字の下書きを作ってください。
+条件：①結論→②経験→③貢献の順／盛らない／会社名への言及1回／最後に面接で聞かれそうな質問を2つ添える。
+
+【応募先の特徴】：
+【自分の経験】：（箇条書き3つ）
+【活かせる強み】：</pre></div>
+
+<div class="card"><button class="copy" onclick="copyP('p6')">コピー</button><h3>⑥ 長文→3行要約＋返信案</h3>
+<pre id="p6">以下の長い文章を、①3行要約 ②返信が必要なら50字の返信案 ③放置でいいかの判定、の順で出力してください。
+
+【文章】：
+（ここに貼る）</pre></div>
+
+<h2 id="tools">3. 無料AIの選び方（30秒早見）</h2>
+<div class="card"><ul class="tight">
+<li><strong>迷ったらChatGPT（無料）</strong> — 万能・利用者が多く調べやすい。まず1週間触る。</li>
+<li><strong>長文・丁寧な日本語ならClaude（無料）</strong> — 議事録・メール整形の仕上がりが自然。</li>
+<li><strong>Google連携・調べ物ならGemini（無料）</strong> — Gmail/ドキュメント併用者に便利。</li>
+<li><strong>出典つき調査ならPerplexity / Felo（無料枠）</strong> — 裏取り用。下書き→出典確認の順で使う。</li>
+</ul>
+<p class="mut">無料枠には回数・機能制限あり。機密情報は入力しない（無料プランは学習利用される可能性あり）。法人利用は各公式のセキュリティ・学習除外設定を確認。</p>
+<!-- AFFILIATE-PLACEHOLDER
+  0円縛り・運用ルール：
+  - ここに直接アフィリエイトリンクを貼るのは人間承認後（A8.net / Amazonアソシエイト等の審査・ID取得が必要なため）。
+  - 形式例： <a href="YOUR-AFFILIATE-URL" rel="sponsored nofollow">ChatGPT公式で無料ではじめる</a>
+  - GitHub Pagesは商用利用（物販・SaaS的利用）が規約で制限されるため、本番公開は Cloudflare Pages / Netlify / Vercel の無料枠を推奨（人間がアカウント作成）。
+-->
+<p class="mut">📌 公式リンク（現状はアフィリエイトなしの素リンク。承認後に成功報酬リンクへ差し替え）：<br>
+<a href="https://chat.openai.com/" rel="noopener">ChatGPT公式</a> ・
+<a href="https://claude.ai/" rel="noopener">Claude公式</a> ・
+<a href="https://gemini.google.com/" rel="noopener">Gemini公式</a></p>
+</div>
+
+<h2 id="pack">4. 30本パック（販売準備中・0円出品）</h2>
+<div class="card">
+<p><strong>「AI時短プロンプト30（メール・議事録・資料・就活）」</strong><br>
+価格案：500〜1,000円（成功報酬型プラットフォームで出品予定：Gumroad または note。手数料は売上時のみ・初期費用0円）。</p>
+<ul class="tight">
+<li>収録：上記6本＋メール5・議事録5・資料5・改善5・就活/副業4（計30）。全てコピペ形式＋使用例つき。</li>
+<li>買い切り・返金規約は各プラットフォームの規定に準拠。購入後もこのページの無料分は公開継続。</li>
+<li>現状は <strong>承認済み・出品準備中</strong>（人間がGumroad/noteに出品作業中）。まずはこのページの無料6本＋診断で効果をお試しください。</li>
+</ul>
+<!-- GUMROAD/NOTE-PLACEHOLDER: 人間承認後に購入ボタン埋め込み（例：Gumroad overlay / note商品リンク） -->
+<p class="mut">出品後にここへ購入ボタンを設置します。今は「無料サンプルで時短できたか」だけお試しください。</p>
+</div>
+
+<h2>5. 使い方・注意</h2>
+<div class="card"><ul class="tight">
+<li>出力は必ず人間が確認（数字・固有名詞・敬語）。重要文書は二重チェック。</li>
+<li>個人情報・顧客データ・社外秘は貼らない。</li>
+<li>料金・機能は各公式の最新情報を確認（為替・改定で変動）。</li>
+<li>本ページは情報提供・時短支援が目的。効果は作業内容により異なります。</li>
+</ul></div>
+
+<h2 id="faq">6. よくある質問</h2>
+<div class="card"><ul class="tight">
+<li><strong>Q. 無料のままで使えますか？</strong><br>A. はい。このページの6本と診断は無料AIの無料枠で使えます。回数制限に当たったら、よく使う1本だけ有料化を検討する順番が無駄がありません。</li>
+<li><strong>Q. 機密情報を入力しても大丈夫？</strong><br>A. いいえ。顧客データ・社外秘・個人情報は貼らないでください。無料プランは入力が学習に使われる可能性があります。固有名詞は仮名に置き換えるのが安全です。</li>
+<li><strong>Q. どの無料AIを選べばいい？</strong><br>A. 迷ったらChatGPT、長文・丁寧な日本語はClaude、Google連携はGemini、出典確認はPerplexity/Feloの無料枠。<a href="#tools">選び方早見表</a>と<a href="#shindan">3問診断</a>で絞れます。</li>
+<li><strong>Q. 30本パックの中身と買い方は？</strong><br>A. このページの6本に加え、メール・議事録・資料・校正・就活/副業の計30本をコピペ形式で収録予定です。Gumroadまたはnoteで買い切り700円案・詳細は<a href="#pack">30本パック案内</a>へ。出品後に購入ボタンを設置します。</li>
+<li><strong>Q. 出力がイマイチなときは？</strong><br>A. 要件の箇条書きを具体化（相手・期限・文字数）してもう一度。数字・固有名詞は人間が確認し、重要文書は二重チェックしてください。</li>
+</ul></div>
+</main>
+<footer>
+<p>運営：0円事業検証プロジェクト（個人・準備中）｜お問い合わせ：公開後に設置｜最終更新：2026-09-14｜本ページは外部送信・データ収集を行いません。アクセス解析を入れる場合は人間承認後にプライバシーポリシーと併せて追加します。</p>
+</footer>
+<script>
+function diagnose(){
+  var q1=document.getElementById('q1').value,q2=document.getElementById('q2').value,q3=document.getElementById('q3').value;
+  var tool=q3==='any'?(q2==='minutes'||q2==='polish'?'Claude（無料）':q2==='doc'?'ChatGPT（無料）':'ChatGPT（無料）／Gemini（無料）'):({chatgpt:'ChatGPT',claude:'Claude',gemini:'Gemini'}[q3]+'（無料）');
+  var rec={mail:'①丁寧メール返信',minutes:'②議事録→TODO化',doc:'③資料の骨子',polish:'④敬語・誤字チェック'}[q2];
+  var extra=q1==='job'?'＋⑤志望動機の下書きも併用がおすすめ。':q1==='side'?'＋⑥長文→3行要約で情報処理を高速化。':q1==='sales'?'＋⑥長文→3行要約で顧客連絡をさばく。':'＋③資料の骨子で定例資料を量産。';
+  var el=document.getElementById('result');
+  el.style.display='block';
+  el.innerHTML='<strong>診断結果：</strong> あなたには <strong>'+tool+'</strong> × <strong>'+rec+'</strong> がおすすめ。<br>'+extra+'<br><br><a href="#prompts">該当プロンプトへ進む →</a>';
+  el.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function copyP(id){
+  var t=document.getElementById(id).innerText;
+  if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){alert('コピーしました。そのまま無料AIに貼って使えます。')});}
+  else{var r=document.createRange();r.selectNodeContents(document.getElementById(id));var s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');alert('コピーしました。');}
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"無料のままで使えますか？","acceptedAnswer":{"@type":"Answer","text":"はい。このページの6本と診断は無料AIの無料枠で使えます。回数制限に当たったら、よく使う1本だけ有料化を検討する順番が無駄がありません。"}},
+{"@type":"Question","name":"機密情報を入力しても大丈夫？","acceptedAnswer":{"@type":"Answer","text":"いいえ。顧客データ・社外秘・個人情報は貼らないでください。無料プランは入力が学習に使われる可能性があります。固有名詞は仮名に置き換えるのが安全です。"}},
+{"@type":"Question","name":"どの無料AIを選べばいい？","acceptedAnswer":{"@type":"Answer","text":"迷ったらChatGPT、長文・丁寧な日本語はClaude、Google連携はGemini、出典確認はPerplexity/Feloの無料枠が目安です。"}},
+{"@type":"Question","name":"30本パックの中身と買い方は？","acceptedAnswer":{"@type":"Answer","text":"このページの6本に加え、メール・議事録・資料・校正・就活/副業の計30本をコピペ形式で収録予定です。Gumroadまたはnoteで買い切り700円案です。"}},
+{"@type":"Question","name":"出力がイマイチなときは？","acceptedAnswer":{"@type":"Answer","text":"要件の箇条書きを具体化（相手・期限・文字数）してもう一度。数字・固有名詞は人間が確認し、重要文書は二重チェックしてください。"}}
+]}
+</script>
+</body>
+</html>
