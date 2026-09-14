@@ -51,7 +51,7 @@ ul.tight li{margin:.3em 0}a{color:var(--acc)}
 </div>
 
 <h2 id="prompts">2. 無料サンプル（コピペOK・6本）</h2>
-<p>まずはここから。全文は <a href="#pack">30本パック案内</a> にまとめています（30本フル版はGumroad / noteで出品準備中・このページの無料分はそのまま利用可）。</p>
+<p>まずはここから。全文は <a href="#pack">30本パック案内</a> にまとめています（30本フル版はnoteで販売中・このページの無料分はそのまま利用可）。</p>
 
 <div class="card"><button class="copy" onclick="copyP('p1')">コピー</button><h3>① 丁寧メール返信（断り＋代替案）</h3>
 <pre id="p1">あなたは丁寧なビジネス文の編集者です。以下のメモを、相手に失礼のないメール文に整えてください。
@@ -99,6 +99,10 @@ ul.tight li{margin:.3em 0}a{color:var(--acc)}
 【文章】：
 （ここに貼る）</pre></div>
 
+<div class="card" style="border:2px solid var(--acc)"><strong>無料6本で時短を実感したら → 残り24本（メール・議事録・資料・校正・就活の型）は30本パックに収録しています。</strong><br>
+<span class="mut">noteで販売中（拡散応援¥300／定価¥700・返金可）。まずは無料分で試して、効いた型だけ増やすのがおすすめです。</span><br>
+<p><a class="btn" href="https://note.com/unique_marten791/n/nd85e3f5b1c69" rel="noopener">30本フル版をnoteで見る（¥300〜）</a></p></div>
+
 <h2 id="tools">3. 無料AIの選び方（30秒早見）</h2>
 <div class="card"><ul class="tight">
 <li><strong>迷ったらChatGPT（無料）</strong> — 万能・利用者が多く調べやすい。まず1週間触る。</li>
@@ -119,10 +123,10 @@ ul.tight li{margin:.3em 0}a{color:var(--acc)}
 <a href="https://gemini.google.com/" rel="noopener">Gemini公式</a></p>
 </div>
 
-<h2 id="pack">4. 30本パック（販売準備中・0円出品）</h2>
+<h2 id="pack">4. 30本パック（販売中・noteで公開中）</h2>
 <div class="card">
 <p><strong>「AI時短プロンプト30（メール・議事録・資料・就活）」</strong><br>
-価格案：出品中（note有料記事・拡散応援¥300／定価¥700・返金可。手数料は売上時のみ・初期費用0円）。</p>
+販売中（note有料記事・拡散応援¥300／定価¥700・返金可。手数料は売上時のみ・初期費用0円）。</p>
 <ul class="tight">
 <li>収録：上記6本＋メール5・議事録5・資料5・改善5・就活/副業4（計30）。全てコピペ形式＋使用例つき。</li>
 <li>買い切り・返金規約は各プラットフォームの規定に準拠。購入後もこのページの無料分は公開継続。</li>
@@ -161,7 +165,7 @@ function diagnose(){
   var extra=q1==='job'?'＋⑤志望動機の下書きも併用がおすすめ。':q1==='side'?'＋⑥長文→3行要約で情報処理を高速化。':q1==='sales'?'＋⑥長文→3行要約で顧客連絡をさばく。':'＋③資料の骨子で定例資料を量産。';
   var el=document.getElementById('result');
   el.style.display='block';
-  el.innerHTML='<strong>診断結果：</strong> あなたには <strong>'+tool+'</strong> × <strong>'+rec+'</strong> がおすすめ。<br>'+extra+'<br><br><a href="#prompts">該当プロンプトへ進む →</a>';
+  el.innerHTML='<strong>診断結果：</strong> あなたには <strong>'+tool+'</strong> × <strong>'+rec+'</strong> がおすすめ。<br>'+extra+'<br><br><a href="#prompts">該当プロンプトへ進む →</a><br><span class="mut">効いたら <a href="#pack">30本パック（¥300〜）</a>で残り24本もどうぞ。</span>';
   el.scrollIntoView({behavior:'smooth',block:'center'});
 }
 function copyP(id){
