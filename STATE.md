@@ -30,12 +30,13 @@ AI中心で、本人が24時間触らなくても売上発生まで進む事業�
 - 2026-09-14 run4：公開頁の転換率・SEO改善。FAQ5問＋FAQPage JSON-LD＋導線＋文言更新（要再デプロイ）。
 - 2026-09-14 run5（自律化・今回）：人間作業を初回1回に集約。`opencode.json`にgit add/commit/pull/push＋wrangler deploy許可を追加（要再起動）、`wrangler.toml`（Static Assets・Git連携用）、`articles/ai-jitan-prompt-mail-gijiroku.md`（Zenn自動投稿用・slug規約適合確認済み・published:true）、`docs/oneshot-setup.md`（単発手順書）を作成。`docs/inflow-article.md`は保管用に格下げ。
 - 2026-09-14 run6：note流入記事の公開確認。タイトルB `https://note.com/unique_marten791/n/n0edfbe5f8af4` で診断ページへのリンク正常・内容一致確認済み。
+- 2026-09-14 run7（転換率fix・今回）：購入導線の矛盾を解消。「出品準備中」「価格案」残存2か所→「販売中」に統一、無料サンプル直後に中間CTAカード追加（残り24本訴求＋購入ボタン2個目）、診断結果内に30本パックへの upsell 1行追加。node検証OK（秘密情報は既承認のAFFILIATE-PLACEHOLDER形式例のみ）。push(54c4d89)→約75秒後に実URLで反映確認＝自動デプロイ再実証。
 - 0円厳守：外部API・有料ホスティング・ドメイン購入なし。診断はブラウザ内完結・データ収集なし。
 
 ## Metrics
 - cost_yen: 0
 - revenue_yen: 0
-- artifacts: site/index.html(購入ボタン誘導中), site/robots.txt, site/sitemap.xml, product/prompt-pack-01.md, articles/×2（汎用＋議事録特化）, wrangler.toml(name修正済み・自動デプロイ実証), docs/oneshot-setup.md (公開中： https://young-shape-ad1c.nyangorinyangori.workers.dev/ )
+- artifacts: site/index.html(購入ボタン×2＋中間CTA＋診断upsell・実URL反映済み), site/robots.txt, site/sitemap.xml, product/prompt-pack-01.md, articles/×2（汎用＋議事録特化）, wrangler.toml(name修正済み・自動デプロイ実証), docs/oneshot-setup.md (公開中： https://young-shape-ad1c.nyangorinyangori.workers.dev/ )
 - validation: Zenn slug規約（12〜50字・a-z0-9-_・ファイル名=slug・frontmatter）をwebsearchで確認し適合
 
 ## Next
@@ -46,3 +47,4 @@ AI中心で、本人が24時間触らなくても売上発生まで進む事業�
 - 2026-09-14深夜：商品URL受領→購入ボタン埋め込み完了（note「AI時短プロンプト30」¥300〜/700）。収益導線が開通（売上はまだ0）。
 - 翌run診断：購入ボタン(cf64cbb)が実URLに未反映。過去の反映は人間の手動再アップロードだった可能性が高く、自動デプロイは一度も実証されていなかった。原因の最有力は `wrangler.toml` の `name = "ai-jitan-prompt"` が公開Worker名と不一致で別Workerに流れていたこと。`name = "young-shape-ad1c"` に修正しpush(fffaf1b)。次runで購入ボタンの反映を自動確認する。
 - 本run：購入ボタンの反映を確認（pack「販売中」＋note購入ボタン＋FAQ更新が実URL表示）。自動デプロイを今回こそ実証。次の一手として流入第2弾 `articles/gijiroku-ai-prompt-minutes-todo.md`（議事録特化・実用3本全文＋商品リンク付き・published:true）を出荷。流入面を2系統化。
+- 本run(run7)：転換率fix完了・実URL反映済み。次は流入第3弾（資料作成・就活特化のどちらか1本、実用3本全文＋商品リンク）か、7日後のnote閲覧数記録のどちらか。流入が細い間は週1記事ペースで面を広げるのが最高値。
